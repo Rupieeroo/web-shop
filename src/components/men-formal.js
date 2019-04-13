@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Menformal extends React.Component {
+export default class MenFormal extends React.Component {
 
   static defaultProps = {
     formal: [
