@@ -8,20 +8,20 @@ A simple and responsive web store built as a tech test. This project has been bu
 
 1.  **Creating a responsive React Web-app**
 
-    After initialising the project with:
+    I initialised the project with:
     ```sh
     create-react-app web-shop
     ```
 
-    Create-react-app ships with jest and babel, so to complete my environment I added the enzyme testing library:
+    'Create-react-app' ships with jest and babel, so to complete my environment I added the enzyme testing library:
     ```sh
     yarn add enzyme enzyme-adapter-react-16 react-test-renderer
     ```
-    I began by making the products test and component. As I wanted this project to be responsive, I created props for the products component to pass into the rendering, rather than rendering static jsx tags. I followed this format for each of the different clothing component sections and their testing counterparts.
+    I began by making the 'products' test and component. As I wanted this project to be responsive I created props for the products component to pass into the rendering, rather than rendering static jsx tags. I followed this format for each of the different clothing component sections and their testing counterparts.
 
-    Once everything that was needed for the products component, I refactored the separate clothing components to be rendered in Products.
+    Once each of the clothing components had been completed, I refactored the project to render all of them in the products component.
 
-    Now that all the items were being rendered to the site my focus could be turned to completing the user stories.
+    Now that all the items were being rendered my focus could be turned to completing the user stories and creating the basket component.
 
 2.  **Completing the user stories**
 
