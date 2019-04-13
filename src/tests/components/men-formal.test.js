@@ -6,7 +6,7 @@ describe('Mens Formal', () => {
   it('renders with formal props', () => {
     const wrapper = mount(<MenFormal />);
     const props = wrapper.props();
-    expect(props.casual).toMatchObject(
+    expect(props.formal).toMatchObject(
       [{
           id: 1,
           name: 'Sharkskin Waistcoat, Charcoal',

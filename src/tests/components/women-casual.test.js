@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import WomenCasual from '../../components/women-casual';
 
-describe('Womens Footwear', () => {
-  it('renders with shoes props', () => {
+describe('Womens Casual', () => {
+  it('renders with casual props', () => {
     const wrapper = mount(<WomenCasual />);
     const props = wrapper.props();
     expect(props.casual).toMatchObject(

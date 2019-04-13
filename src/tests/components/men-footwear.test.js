@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import MenFootwear from '../../components/men-footwear';
 
-describe('Womens Footwear', () => {
+describe('Mens Footwear', () => {
   it('renders with shoes props', () => {
     const wrapper = mount(<MenFootwear />);
     const props = wrapper.props();
