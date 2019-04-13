@@ -27,16 +27,17 @@ export default class WomenFootwear extends React.Component {
 
     return(
       <div>
-      { this.props.shoes.map((shoe) => (
-        <form key={shoe.id}>
-          <h3 key={shoe.name}>
-            {shoe.name}
-            -
-            {formattedPrice(shoe.price)}
-          </h3>
-          <button key={shoe.id}>Add to cart</button>
-        </form>
-      ))}
+        <h2>Women's Footwear</h2>
+        { this.props.shoes.map((shoe) => (
+          <form key={shoe.id}>
+            <h3 key={shoe.name}>
+              {shoe.name}
+              -
+              {formattedPrice(shoe.price)}
+            </h3>
+            <button key={shoe.id}>Add to cart</button>
+          </form>
+        ))}
       </div>
     );
   }

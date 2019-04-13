@@ -27,16 +27,17 @@ export default class MenFormal extends React.Component {
 
     return(
       <div>
-      { this.props.formal.map((formal) => (
-        <form key={formal.id}>
-          <h3 key={formal.name}>
-            {formal.name}
-            -
-            {formattedPrice(formal.price)}
-          </h3>
-          <button key={formal.id}>Add to cart</button>
-        </form>
-      ))}
+        <h2>Men's Formal</h2>
+        { this.props.formal.map((formal) => (
+          <form key={formal.id}>
+            <h3 key={formal.name}>
+              {formal.name}
+              -
+              {formattedPrice(formal.price)}
+            </h3>
+            <button key={formal.id}>Add to cart</button>
+          </form>
+        ))}
       </div>
     );
   }

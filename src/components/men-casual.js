@@ -27,16 +27,17 @@ export default class MenCasual extends React.Component {
 
     return(
       <div>
-      { this.props.casual.map((casual) => (
-        <form key={casual.id}>
-          <h3 key={casual.name}>
-            {casual.name}
-            -
-            {formattedPrice(casual.price)}
-          </h3>
-          <button key={casual.id}>Add to cart</button>
-        </form>
-      ))}
+        <h2>Men's Casual</h2>
+        { this.props.casual.map((casual) => (
+          <form key={casual.id}>
+            <h3 key={casual.name}>
+              {casual.name}
+              -
+              {formattedPrice(casual.price)}
+            </h3>
+            <button key={casual.id}>Add to cart</button>
+          </form>
+        ))}
       </div>
     );
   }
