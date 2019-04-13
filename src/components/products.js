@@ -1,26 +1,27 @@
 import React from 'react';
+import WomenFootwear from './women-footwear';
+import MenFootwear from './men-footwear';
+import WomenCasual from './women-casual';
+import MenCasual from './men-casual';
+import MenFormal from './men-formal';
+import WomenFormal from './women-formal';
 
 export default class Products extends React.Component {
 
   static defaultProps = {
         title: 'Products',
-        categories: [
-          'Women’s Footwear',
-          'Men’s Footwear',
-          'Women’s Casualwear',
-          'Men’s Casualwear',
-          'Men’s Formalwear',
-          'Women’s Formalwear'
-        ]
     }
 
   render() {
     return (
       <div>
         <h1>{this.props.title}</h1>
-        {this.props.categories.map((category, index) => (
-          <p key={index + 1}>{category}</p>
-        )) }
+        <WomenFootwear />
+        <MenFootwear />
+        <WomenCasual />
+        <MenCasual />
+        <MenFormal />
+        <WomenFormal />
       </div>
     );
   }
