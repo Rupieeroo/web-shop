@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import Products from '../../components/products'
+import { mount } from 'enzyme';
+import Products from '../../components/products';
 
 describe('Products Component', () => {
   it('renders the title prop', () => {
