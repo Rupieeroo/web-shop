@@ -10,19 +10,27 @@ import Basket from './basket';
 export default class Products extends React.Component {
 
   state = {
-    basket: [{ item: "thing" }],
+    basket: [],
     selectedItem: undefined
   };
 
   static defaultProps = {
-        title: 'Products',
-    };
+    title: 'Products',
+  };
 
-    handleEmptyBasket = () => {
-      console.log(this.state.basket);
-      this.setState(() => ({ basket: [] }));
-      console.log('basket has been emptied');
-    };
+  handleEmptyBasket = () => {
+    console.log(this.state.basket);
+    this.setState(() => ({ basket: [] }));
+    console.log('basket has been emptied');
+  };
+
+  handleAddToBasket = (item) => {
+    console.log('button clicked');
+    this.setState((prevState) => ({
+      basket: prevState.basket.concat(item)
+    }));
+    console.log(this.state.basket);
+  };
 
     componentDidMount() {
     try {
@@ -37,6 +45,13 @@ export default class Products extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.basket.length !== this.state.basket.length){
+      const json = JSON.stringify(this.state.basket);
+      localStorage.setItem('basket', json);
+    }
+  }
+
   render() {
     return (
       <div>
@@ -45,8 +60,12 @@ export default class Products extends React.Component {
           basket={this.state.basket}
           handleEmptyBasket={this.handleEmptyBasket}
         />
-        <WomenFootwear />
-        <MenFootwear />
+        <WomenFootwear
+          handleAddToBasket={this.handleAddToBasket}
+         />
+        <MenFootwear
+          handleAddToBasket={this.handleAddToBasket}
+         />
         <WomenCasual />
         <MenCasual />
         <MenFormal />
