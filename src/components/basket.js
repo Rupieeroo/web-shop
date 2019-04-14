@@ -14,7 +14,6 @@ const Basket = (props) => (
         </button>
       </div>
     ))}
-      <p>Total: £{props.basketTotal}</p>
     <button
       onClick={props.handleEmptyBasket}
     >Remove All Items</button>
