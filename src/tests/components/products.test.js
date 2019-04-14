@@ -8,4 +8,10 @@ describe('Products Component', () => {
     const props = wrapper.props();
     expect(props.title).toBe("Products");
   });
+
+  it('renders an empty basket', () => {
+    const wrapper = mount(<Products />);
+    const state = wrapper.state();
+    expect(state.basket).toEqual([]);
+  });
 });
