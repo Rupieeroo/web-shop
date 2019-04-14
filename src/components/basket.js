@@ -5,7 +5,7 @@ const Basket = (props) => (
     <h3>Basket</h3>
     {props.basket === 0 && <p className="empty__message">Shopping cart is empty.</p>}
     {props.basket.map((item, index) => (
-      <p key={index + 1}>{item.item}</p>
+      <p key={index + 1}>{item.name}</p>
     ))}
     <button
       onClick={props.handleEmptyBasket}
