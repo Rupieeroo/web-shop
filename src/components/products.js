@@ -11,7 +11,7 @@ export default class Products extends React.Component {
 
   state = {
     basket: [],
-    selectedItem: undefined
+    basketTotal: 0
   };
 
   static defaultProps = {
@@ -19,21 +19,25 @@ export default class Products extends React.Component {
   };
 
   handleEmptyBasket = () => {
-    this.setState(() => ({ basket: [] }));
+    this.setState(() => ({
+      basket: [],
+      basketTotal: 0
+     }));
   };
 
   handleAddToBasket = (item) => {
     this.setState((prevState) => ({
-      basket: prevState.basket.concat(item)
+      basket: prevState.basket.concat(item),
+      basketTotal: prevState.basketTotal + item.price
     }));
   };
 
     handleDeleteFromBasket = (itemToRemove) => {
-      console.log('button was clicked');
-    this.setState((prevState) => ({
-      basket: prevState.basket.filter((item) => itemToRemove !== item)
-    }));
-  };
+      this.setState((prevState) => ({
+        basket: prevState.basket.filter((item) => itemToRemove !== item),
+        basketTotal: prevState.basketTotal - itemToRemove.price
+      }));
+    };
 
     componentDidMount() {
     try {
@@ -61,6 +65,7 @@ export default class Products extends React.Component {
         <h1>{this.props.title}</h1>
         <Basket
           basket={this.state.basket}
+          basketTotal={this.state.basketTotal}
           handleDeleteFromBasket={this.handleDeleteFromBasket}
           handleEmptyBasket={this.handleEmptyBasket}
         />
