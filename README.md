@@ -48,9 +48,7 @@ A simple and responsive web store built as a tech test. This project has been bu
 
 The components and app are autonomously tested with the objects that they render with, the more complicated the functionality later on the more in-depth I could have tested. These tests are run with:
     
-    ```sh
     yarn test
-    ```
 
 The feature testing for the buttons was conducted with Cypress. Again had I got further I would have added more tests for what should be rendered to the browser but what I have tested is all of the pages functionality. This is run with:
     ```sh
