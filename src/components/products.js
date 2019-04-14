@@ -12,11 +12,11 @@ export default class Products extends React.Component {
   state = {
     basket: [{ item: "thing" }],
     selectedItem: undefined
-  }
+  };
 
   static defaultProps = {
         title: 'Products',
-    }
+    };
 
     handleEmptyBasket = () => {
       console.log(this.state.basket);
@@ -24,6 +24,18 @@ export default class Products extends React.Component {
       console.log('basket has been emptied');
     };
 
+    componentDidMount() {
+    try {
+      const json = localStorage.getItem('basket');
+      const basket = JSON.parse(json);
+
+      if (basket) {
+        this.setState(() => ({ basket }));
+      }
+    } catch (e) {
+      //do nothing at all
+    }
+  }
 
   render() {
     return (
