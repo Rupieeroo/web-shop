@@ -19,8 +19,9 @@ export default class Products extends React.Component {
     }
 
     handleEmptyBasket = () => {
-      console.log('basket has been emptied');
+      console.log(this.state.basket);
       this.setState(() => ({ basket: [] }));
+      console.log('basket has been emptied');
     };
 
 
@@ -29,6 +30,7 @@ export default class Products extends React.Component {
       <div>
         <h1>{this.props.title}</h1>
         <Basket
+          basket={this.state.basket}
           handleEmptyBasket={this.handleEmptyBasket}
         />
         <WomenFootwear />
