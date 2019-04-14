@@ -19,17 +19,20 @@ export default class Products extends React.Component {
   };
 
   handleEmptyBasket = () => {
-    console.log(this.state.basket);
     this.setState(() => ({ basket: [] }));
-    console.log('basket has been emptied');
   };
 
   handleAddToBasket = (item) => {
-    console.log('button clicked');
     this.setState((prevState) => ({
       basket: prevState.basket.concat(item)
     }));
-    console.log(this.state.basket);
+  };
+
+    handleDeleteFromBasket = (itemToRemove) => {
+      console.log('button was clicked');
+    this.setState((prevState) => ({
+      basket: prevState.basket.filter((item) => itemToRemove !== item)
+    }));
   };
 
     componentDidMount() {
@@ -58,6 +61,7 @@ export default class Products extends React.Component {
         <h1>{this.props.title}</h1>
         <Basket
           basket={this.state.basket}
+          handleDeleteFromBasket={this.handleDeleteFromBasket}
           handleEmptyBasket={this.handleEmptyBasket}
         />
         <WomenFootwear
