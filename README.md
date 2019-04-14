@@ -32,27 +32,15 @@ A simple and responsive web store built as a tech test. This project has been bu
 
     As a User I can view the products and their category, price and availability information.
 
-    1. ***As a User I can add a product to my shopping cart.***
+    ***1. As a User I can add a product to my shopping cart.***
       After completing the initial user story, This one proved to be time consuming. I have recently come to understand event handlers, states and props and how they interact between parent and children components so initially this worked fine. I could get states and props to pass down to Mens Footwear and Basket to do simple functions such as emptying the basket of items, but the difficulty came at state changes. As I was trying to get Mens Footwear items to be added individually to the basket I found that clicking the button would cause a recursion; adding every item of clothing to the basket continuously until the browser broke. It was only after I came to understand how anonymous functions worked once passed into children that I could solve the problem, and then add the same functionality to each of the clothing components.
 
-
-    2. ***As a User I can remove a product from my shopping cart.***
+    ***2. As a User I can remove a product from my shopping cart.***
       A much easier task as all that was needed was to delete the item from the basket array inside the Basket component. handleDeleteFromBasket in the Products component just removed the object by itself, I tested the edge cases by adding multiple amounts of the same object and it did indeed only delete the one selected.
 
-
-    3. As a User I can view the total price for the products in my shopping
-    4. cart.
-    5. As a User I can apply a voucher to my shopping cart.
-    6. As a User I can view the total price for the products in my shopping cart
-    7. with discounts applied.
-    8. As a User I am alerted when I apply an invalid voucher to my shopping
-    9. cart.
-    10. As a User I am unable to Out of Stock products to the shopping cart.
-
-3.  **Testing the web store**
-
-    -final section-
-
+    ***3. As a User I can view the total price for the products in my shopping cart.***
+      I attempted this for a couple of hours. The issue I ran into was to do with how I had built the adding and deleting from basket functions. deleting from basket was completed in the Basket component, this allowed me to easily take money away from the basketTotal object. However because the adding to basket functions are called in each clothing component, it was not so easy to connect them and in the end time was against me for getting any further with this so I decided to leave the user stories here.
+      
 ## :white_check_mark: Testing
 
 
