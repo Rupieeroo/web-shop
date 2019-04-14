@@ -19,25 +19,38 @@ export default class MenCasual extends React.Component {
     ]
   }
 
+  handleAddToBasket = (e) => {
+    e.preventDefault();
+  }
+
+  handleShoeSubmit = (shoe) => {
+    return () => this.props.handleAddToBasket(shoe)
+  }
+
   render() {
 
     const formattedPrice = num => (
         Intl.NumberFormat('en-UK', { style: 'currency', currency: 'GBP' }).format(num)
     );
 
+    const casualList = ( this.props.casual.map((casual) => (
+      <form key={casual.id}
+        value={casual}
+        onSubmit={this.handleShoeSubmit(casual)}
+      >
+        <h3 key={casual.name}>
+          {casual.name}
+          -
+          {formattedPrice(casual.price)}
+        </h3>
+        <button key={casual.id}>Add to cart</button>
+      </form>
+    )));
+
     return(
       <div>
         <h2>Men's Casual</h2>
-        { this.props.casual.map((casual) => (
-          <form key={casual.id}>
-            <h3 key={casual.name}>
-              {casual.name}
-              -
-              {formattedPrice(casual.price)}
-            </h3>
-            <button key={casual.id}>Add to cart</button>
-          </form>
-        ))}
+        { casualList }
       </div>
     );
   }
