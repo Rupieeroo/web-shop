@@ -52,6 +52,7 @@ export default class WomenFootwear extends React.Component {
 
     return(
       <div>
+        <h2>Women's Footwear</h2>
         { shoeList }
       </div>
     );
