@@ -51,7 +51,7 @@ The components and app are autonomously tested with the objects that they render
     yarn test
 
 The feature testing for the buttons was conducted with Cypress. Again had I got further I would have added more tests for what should be rendered to the browser but what I have tested is all of the pages functionality. This is run with:
-    ```sh
+    ```
     cypress run
     ```
 
