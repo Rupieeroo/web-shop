@@ -4,7 +4,7 @@
 
 A simple and responsive web store built as a tech test. This project has been built using React with Jest and Enzyme. The bulk of the code sits in the src folder: components is where all of the React components sit; the Products component renders all the other components, basket displays the basket object that is rendered in Products and all the others are clothing item processors. App.js renders the app (the Products component). Tests are where you can find the Jest and Enzyme testing and the Cypress folder (in the root directory) is where I have the cypress tests.
 
- **Summery**
+ **Summery -**
     There are a lot of things I would like to add to it if I go further: 1.) I ran out of time to go further with the user stories and felt I was very close to finishing the next one. 2.) In the future I would like to add a database to this project and put the clothing items objects into there instead of making them into props. A lot of the functionality of each component is almost identical and with more time and a deeper tech structure I could have turned the Products component into an item processor and taken all of the clothing components out of the project. and 3.) It is not a good looking site, it needs a lot (and I mean A LOT) of attention in the styling department. But overall I enjoyed the challenge of this project and am happy with the aspects i did complete.
 
 ## :running: Development Journey
