@@ -66,10 +66,18 @@ export default class Products extends React.Component {
         <MenFootwear
           handleAddToBasket={this.handleAddToBasket}
          />
-        <WomenCasual />
-        <MenCasual />
-        <MenFormal />
-        <WomenFormal />
+        <WomenCasual
+          handleAddToBasket={this.handleAddToBasket}
+         />
+        <MenCasual
+          handleAddToBasket={this.handleAddToBasket}
+         />
+        <MenFormal
+          handleAddToBasket={this.handleAddToBasket}
+         />
+        <WomenFormal
+          handleAddToBasket={this.handleAddToBasket}
+         />
       </div>
     );
   }

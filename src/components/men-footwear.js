@@ -2,10 +2,6 @@ import React from 'react';
 
 export default class MenFootwear extends React.Component {
 
-  state = {
-    error: undefined
-  };
-
   static defaultProps = {
     shoes: [
     {
@@ -44,7 +40,6 @@ export default class MenFootwear extends React.Component {
 
     const shoeList = ( this.props.shoes.map((shoe) => (
       <form key={shoe.id}
-            value={shoe}
             onSubmit={this.handleShoeSubmit(shoe)}
       >
         <h3 key={shoe.name}>
@@ -57,7 +52,7 @@ export default class MenFootwear extends React.Component {
          value={shoe}
          >Add to cart</button>
       </form>
-    )))
+    )));
 
     return(
       <div>

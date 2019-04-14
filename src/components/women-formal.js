@@ -19,25 +19,37 @@ export default class WomenFormal extends React.Component {
     ]
   }
 
+  handleAddToBasket = (e) => {
+    e.preventDefault();
+  }
+
+  handleShoeSubmit = (formal) => {
+    return () => this.props.handleAddToBasket(formal)
+  }
+
   render() {
 
     const formattedPrice = num => (
         Intl.NumberFormat('en-UK', { style: 'currency', currency: 'GBP' }).format(num)
     );
 
+    const formalList = ( this.props.formal.map((formal) => (
+      <form key={formal.id}
+            onSubmit={this.handleShoeSubmit(formal)}
+      >
+        <h3 key={formal.name}>
+          {formal.name}
+          -
+          {formattedPrice(formal.price)}
+        </h3>
+        <button key={formal.id}>Add to cart</button>
+      </form>
+    )))
+
     return(
       <div>
         <h2>Women's Formal</h2>
-        { this.props.formal.map((formal) => (
-          <form key={formal.id}>
-            <h3 key={formal.name}>
-              {formal.name}
-              -
-              {formattedPrice(formal.price)}
-            </h3>
-            <button key={formal.id}>Add to cart</button>
-          </form>
-        ))}
+        { formalList }
       </div>
     );
   }

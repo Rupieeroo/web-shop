@@ -20,11 +20,11 @@ export default class WomenFootwear extends React.Component {
   }
 
   handleAddToBasket = (e) => {
-      e.preventDefault();
+    e.preventDefault();
   }
 
   handleShoeSubmit = (shoe) => {
-      return () => this.props.handleAddToBasket(shoe)
+    return () => this.props.handleAddToBasket(shoe)
   }
 
   render() {
@@ -35,7 +35,6 @@ export default class WomenFootwear extends React.Component {
 
     const shoeList = ( this.props.shoes.map((shoe) => (
       <form key={shoe.id}
-            value={shoe}
             onSubmit={this.handleShoeSubmit(shoe)}
       >
         <h3 key={shoe.name}>
